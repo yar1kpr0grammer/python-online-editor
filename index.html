@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Python Web IDE</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>🐍 Python Web IDE</header>
+
+    <main>
+        <textarea id="editor">print("Hello from Python!")</textarea>
+
+        <div class="controls">
+            <button id="run">▶ Run</button>
+            <button id="stop">⏹ Stop</button>
+        </div>
+
+        <pre id="output"></pre>
+    </main>
+
+    <footer>
+        Python работает через WebAssembly (Pyodide)
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
