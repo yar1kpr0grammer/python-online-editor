@@ -3,15 +3,18 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Python Web IDE</title>
+    <title>Python Web IDE с Pyright WASM</title>
     <link rel="stylesheet" href="style.css" />
 
     <!-- Monaco Editor -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+    <!-- Pyright WASM -->
+    <script src="https://cdn.jsdelivr.net/npm/pyright-wasm@1.1.211/pyright.js"></script>
 </head>
 
 <body>
-    <header>🐍 Python Web IDE</header>
+    <header><h1>🐍 Python Web</h1>
+</header>
 
     <main>
         <div id="editor"></div>
@@ -19,13 +22,16 @@
         <div class="controls">
             <button id="run">▶ Run</button>
             <button id="stop">⏹ Stop</button>
+            <button id="download">⬇ Download</button>
+            <button id="share">🔗 Share</button>
+
         </div>
 
         <pre id="output"></pre>
     </main>
 
     <footer>
-        Python (Pyodide) · Monaco Editor · Client-side
+        Python (Pyodide) · Monaco Editor · Pyright WASM LSP · Client-side
     </footer>
 
     <script src="main.js"></script>
