@@ -27,16 +27,10 @@ main {
     padding: 10px;
 }
 
-textarea {
-    width: 100%;
-    resize: none;
-    padding: 12px;
-    font-family: monospace;
-    font-size: 15px;
-    background: #020617;
-    color: #e5e7eb;
+#editor {
     border: 1px solid #1e293b;
     border-radius: 6px;
+    overflow: hidden;
 }
 
 .controls {
