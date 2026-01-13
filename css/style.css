@@ -1,0 +1,106 @@
+/* css/style.css */
+body {
+    margin: 0;
+    padding: 0.4em 1em;
+    background: #1e1e23;
+    color: #ffffff;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+header{
+    border-bottom:1px solid rgba(255, 255, 255, 0.23);
+}
+
+#controls {
+    margin-bottom: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+button,
+input[type="text"] {
+    font-size: 14px;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    border: none;
+}
+
+button {
+    background: #020202;
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 999px;
+}
+
+button:disabled {
+    background: #282828;
+    color: #9b9b9b;
+    cursor: not-allowed;
+}
+
+input[type="text"] {
+    flex: 0 0 200px;
+    color: black;
+}
+
+#editor {
+    flex: 1 1 auto;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+#output {
+    height: 150px;
+    background: #21252b;
+    color: #98c379;
+    padding: 1em;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    margin-top: 0.5em;
+    font-family: monospace;
+    border-radius: 4px;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.items-center{
+    align-items: center;
+}
+.justify-bet{
+    justify-content: space-between;
+}
+
+header{
+    margin-bottom: 1em;
+}
+#filename{
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#utils{
+    margin-bottom: 0.6em;
+    gap: 0.4em;
+}
+
+.icon-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.gap{
+    gap: 0.4em;
+}

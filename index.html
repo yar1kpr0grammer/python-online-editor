@@ -3,38 +3,51 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Python Web IDE с Pyright WASM</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🐍 Python web</title>
+    <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Monaco Editor -->
+    <!-- Monaco loader -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
-    <!-- Pyright WASM -->
-    <script src="https://cdn.jsdelivr.net/npm/pyright-wasm@1.1.211/pyright.js"></script>
+    <!-- Brython -->
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.13.2/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.13.2/brython_stdlib.js"></script>
 </head>
 
-<body>
-    <header><h1>🐍 Python Web</h1>
-</header>
+<body onload="brython()">
 
-    <main>
-        <div id="editor"></div>
-
-        <div class="controls">
-            <button id="run">▶ Run</button>
-            <button id="stop">⏹ Stop</button>
-            <button id="download">⬇ Download</button>
-            <button id="share">🔗 Share</button>
-
+<header class="flex-row items-center justify-bet">
+        <h2>🐍Python web</h2>
+        <div id="controls" class="gap">
+            <button id="run" class="icon-btn">
+                <img src="assets/run.svg" alt="run" />
+                Запустить</button>
+            <button id="stop" class="icon-btn" disabled>
+                <img src="assets/abort.svg" alt="abort" />
+                Остановить
+            </button>
         </div>
+</header>
+<div id="utils" class="flex-row items-center justify-bet">
+    <input id="filename" type="text" value="main.py" placeholder="Имя файла для скачивания" />
+    <div class="flex-row gap">
+    <button id="download" class="icon-btn">
+        <img src="assets/download.svg" alt="download" />
+        Скачать
+    </button>
+    <button id="share" class="icon-btn">
+        <img src="assets/share.svg" alt="share" />
+        Поделиться
+    </button>
+</div>
+</div>
+<div id="editor" style="height: 400px;"></div>
+<div id="output"></div>
 
-        <pre id="output"></pre>
-    </main>
+<script type="module" src="js/utils.js"></script>
+<script type="module" src="js/editor.js"></script>
+<script type="module" src="js/run.js"></script>
 
-    <footer>
-        Python (Pyodide) · Monaco Editor · Pyright WASM LSP · Client-side
-    </footer>
-
-    <script src="main.js"></script>
 </body>
 
 </html>
