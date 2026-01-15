@@ -2,6 +2,7 @@
 
 import { getCode, initEditor } from "./editor.js";
 import { encodeCode, copyToClipboard, downloadFile } from "./utils.js";
+import { createToast } from "./toast.js";
 
 let currentScript = null;
 
@@ -79,14 +80,17 @@ export async function main() {
         const encoded = encodeCode(getCode());
         const url = `${location.origin}${location.pathname}?code=${encoded}`;
         await copyToClipboard(url);
-        alert("Ссылка скопирована");
+        // alert("Ссылка скопирована");
+        createToast("Скопированно", "Ссылка в буфере обмена");
     };
 
     downloadBtn.onclick = () => {
+        const filename = filenameInput.value.trim() || "code.py"
         downloadFile(
             getCode(),
-            filenameInput.value.trim() || "code.py"
+            filename
         );
+        createToast("Загрузка пошла", `сохраняем как ${filename}`);
     };
 }
 

@@ -1,16 +1,24 @@
-/* css/style.css */
+:root{
+    --bg-color: #1e1e23;
+    --button-bg-color: #020202;
+    --button-disabled-bg-color: #282828;
+    --text-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.23);
+    --output-text-color: #98c379;
+    --output-bg-color: #1e1e1e;
+}
 body {
     margin: 0;
     padding: 0.4em 1em;
-    background: #1e1e23;
-    color: #ffffff;
+    background: var(--bg-color);
+    color: var(--text-color);
     font-family: monospace;
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 header{
-    border-bottom:1px solid rgba(255, 255, 255, 0.23);
+    border-bottom:1px solid var(--border-color);
 }
 
 #controls {
@@ -30,15 +38,15 @@ input[type="text"] {
 }
 
 button {
-    background: #020202;
-    border: 1px solid rgba(255, 255, 255, 0.23);
+    background: var(--button-bg-color);
+    border: 1px solid var(--border-color);
     color: #ffffff;
     cursor: pointer;
     border-radius: 999px;
 }
 
 button:disabled {
-    background: #282828;
+    background: var(--button-disabled-bg-color);
     color: #9b9b9b;
     cursor: not-allowed;
 }
@@ -50,14 +58,15 @@ input[type="text"] {
 
 #editor {
     flex: 1 1 auto;
-    border: 1px solid #444;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
 }
 
 #output {
     height: 150px;
-    background: #21252b;
-    color: #98c379;
+    background: var(--output-bg-color);
+    color: var(--output-text-color);
+    border: 1px solid var(--border-color);
     padding: 1em;
     overflow-y: auto;
     white-space: pre-wrap;
@@ -81,7 +90,7 @@ header{
     margin-bottom: 1em;
 }
 #filename{
-    color: white;
+    color: var(--text-color);
     background-color: transparent;
     outline: none;
     border: none;
@@ -103,4 +112,12 @@ header{
 
 .gap{
     gap: 0.4em;
+}
+
+footer{
+    border-top: 1px solid var(--border-color);
+    padding: 0.8em 0
+}
+footer a{
+    color: var(--text-color)
 }

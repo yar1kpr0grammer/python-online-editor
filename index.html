@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>🐍 Python web</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/toast.css">
 
     <!-- Monaco loader -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
@@ -17,7 +18,7 @@
 <body onload="brython()">
 
 <header class="flex-row items-center justify-bet">
-        <h2>🐍Python web</h2>
+        <h2>🐍 Python web</h2>
         <div id="controls" class="gap">
             <button id="run" class="icon-btn">
                 <img src="assets/run.svg" alt="run" />
@@ -44,6 +45,14 @@
 <div id="editor" style="height: 400px;"></div>
 <div id="output"></div>
 
+<div id="messages"></div>
+
+<footer>
+    <a href="https://yar1kpr0grammer.github.io/python-online-editor/">Исходный код
+    </a>
+</footer>
+
+<script type="module" src="js/toast.js"></script>
 <script type="module" src="js/utils.js"></script>
 <script type="module" src="js/editor.js"></script>
 <script type="module" src="js/run.js"></script>
