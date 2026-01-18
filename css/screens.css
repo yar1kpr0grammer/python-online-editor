@@ -1,0 +1,28 @@
+.avoid-mobile {
+    display: none;
+}
+
+/* >= 786px */
+@media (min-width: 786px) {
+    .mobile-only {
+        display: none;
+    }
+
+    .avoid-mobile {
+        display: flex;
+    }
+    #messages {
+        position: fixed;
+        top: auto;
+        left: auto;
+        bottom: 0.8rem;
+        right: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        pointer-events: none;
+    }
+    .message{
+        text-align: left;
+    }
+}

@@ -18,15 +18,13 @@ body {
     height: 100vh;
 }
 header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     border-bottom:1px solid var(--border-color);
 }
-
-#controls {
-    margin-bottom: 0.5em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+header h1{
+    font-size: 16px;
 }
 
 button,
@@ -56,6 +54,18 @@ input[type="text"] {
     color: black;
 }
 
+header{
+    margin-bottom: 1em;
+}
+
+footer{
+    border-top: 1px solid var(--border-color);
+    padding: 0.8em 0
+}
+footer a{
+    color: var(--text-color)
+}
+
 #editor {
     flex: 1 1 auto;
     border: 1px solid var(--border-color);
@@ -75,20 +85,6 @@ input[type="text"] {
     border-radius: 4px;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
-}
-.items-center{
-    align-items: center;
-}
-.justify-bet{
-    justify-content: space-between;
-}
-
-header{
-    margin-bottom: 1em;
-}
 #filename{
     color: var(--text-color);
     background-color: transparent;
@@ -103,21 +99,23 @@ header{
     gap: 0.4em;
 }
 
-.icon-btn{
+#controls {
+    margin-bottom: 0.5em;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.4em;
 }
 
-.gap{
-    gap: 0.4em;
+#bottom-menu{
+    padding: 1em;
 }
 
-footer{
-    border-top: 1px solid var(--border-color);
-    padding: 0.8em 0
-}
-footer a{
-    color: var(--text-color)
+@media (min-width: 786px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

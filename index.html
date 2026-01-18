@@ -7,55 +7,79 @@
     <title>🐍 Python web</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/screens.css">
 
     <!-- Monaco loader -->
     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
     <!-- Brython -->
     <script src="https://cdn.jsdelivr.net/npm/brython@3.13.2/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.13.2/brython_stdlib.js"></script>
+
+    <script type="module" src="js/toast.js" defer></script>
+    <script type="module" src="js/utils.js" defer></script>
+    <script type="module" src="js/editor.js" defer></script>
+    <script type="module" src="js/run.js" defer></script>
 </head>
 
 <body onload="brython()">
 
-<header class="flex-row items-center justify-bet">
-        <h2>🐍 Python web</h2>
-        <div id="controls" class="gap">
-            <button id="run" class="icon-btn">
-                <img src="assets/run.svg" alt="run" />
-                Запустить</button>
-            <button id="stop" class="icon-btn" disabled>
-                <img src="assets/abort.svg" alt="abort" />
-                Остановить
-            </button>
-        </div>
+<header>
+    <h1>🐍 Python web</h1>
+    <div id="controls" class="gap">
+        <button id="run" class="icon-btn">
+            <img src="assets/run.svg" alt="run" />
+            Запустить</button>
+        <button id="stop" class="icon-btn" disabled>
+            <img src="assets/abort.svg" alt="abort" />
+            Остановить
+        </button>
+    </div>
 </header>
-<div id="utils" class="flex-row items-center justify-bet">
+
+<!-- Имя файла, скачать и поделиться -->
+<section id="utils" class="avoid-mobile flex-row items-center justify-bet">
     <input id="filename" type="text" value="main.py" placeholder="Имя файла для скачивания" />
     <div class="flex-row gap">
-    <button id="download" class="icon-btn">
-        <img src="assets/download.svg" alt="download" />
-        Скачать
-    </button>
-    <button id="share" class="icon-btn">
-        <img src="assets/share.svg" alt="share" />
-        Поделиться
-    </button>
-</div>
-</div>
+        <button class="download-btn icon-btn">
+            <img src="assets/download.svg" alt="download" />
+            Скачать
+        </button>
+        <button class="share-btn icon-btn">
+            <img src="assets/share.svg" alt="share" />
+            Поделиться
+        </button>
+    </div>
+</section>
+
+<!-- Поле ввода кода -->
 <div id="editor" style="height: 400px;"></div>
+
+<!-- Поле вывода кода -->
 <div id="output"></div>
 
-<div id="messages"></div>
+<!-- Сообщения -->
+<div id="messages">
+    <!-- <div class="message">
+        <h1>Hello world</h1>
+        <p>test</p>
+    </div> -->
+</div>
 
 <footer>
     <a href="https://github.com/yar1kpr0grammer/python-online-editor">Исходный код
     </a>
+    <div id="bottom-menu" class="mobile-only flex-row justify-center gap">
+        <button class="download-btn icon-btn">
+            <img src="assets/download.svg" alt="download" />
+            Скачать
+        </button>
+        <button class="share-btn icon-btn">
+            <img src="assets/share.svg" alt="share" />
+            Поделиться
+        </button>
+    </div>
 </footer>
-
-<script type="module" src="js/toast.js"></script>
-<script type="module" src="js/utils.js"></script>
-<script type="module" src="js/editor.js"></script>
-<script type="module" src="js/run.js"></script>
 
 </body>
 

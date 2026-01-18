@@ -12,9 +12,22 @@ export async function main() {
     const outputDiv = document.getElementById("output");
     const runBtn = document.getElementById("run");
     const stopBtn = document.getElementById("stop");
-    const shareBtn = document.getElementById("share");
-    const downloadBtn = document.getElementById("download");
     const filenameInput = document.getElementById("filename");
+    document.querySelectorAll(".download-btn").forEach(btn => {
+        btn.onclick = () => {
+            const filename = filenameInput.value.trim() || "code.py";
+            downloadFile(getCode(), filename);
+            createToast("Загрузка пошла", `сохраняем как ${filename}`);
+        }
+    })
+    document.querySelectorAll(".share-btn").forEach((btn) => {
+		btn.onclick = async () => {
+			const encoded = encodeCode(getCode());
+            const url = `${location.origin}${location.pathname}?code=${encoded}`;
+            await copyToClipboard(url);
+            createToast("Скопированно", "Ссылка в буфере обмена");
+		};
+	});
 
     function clearOutput() {
         outputDiv.textContent = "";
@@ -74,23 +87,6 @@ export async function main() {
         }
         runBtn.disabled = false;
         stopBtn.disabled = true;
-    };
-
-    shareBtn.onclick = async () => {
-        const encoded = encodeCode(getCode());
-        const url = `${location.origin}${location.pathname}?code=${encoded}`;
-        await copyToClipboard(url);
-        // alert("Ссылка скопирована");
-        createToast("Скопированно", "Ссылка в буфере обмена");
-    };
-
-    downloadBtn.onclick = () => {
-        const filename = filenameInput.value.trim() || "code.py"
-        downloadFile(
-            getCode(),
-            filename
-        );
-        createToast("Загрузка пошла", `сохраняем как ${filename}`);
     };
 }
 

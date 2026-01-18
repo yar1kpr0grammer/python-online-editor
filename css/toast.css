@@ -1,6 +1,7 @@
 #messages {
     position: fixed;
-    bottom: 0.8rem;
+    top: 1rem;
+    left: 1rem;
     right: 1rem;
     display: flex;
     flex-direction: column;
@@ -9,6 +10,7 @@
 }
 
 .message {
+    text-align: center;
     background: var(--button-bg-color);
     border: 1px solid var(--border-color);
     padding: 0.6rem 6rem 0.6rem 2rem;
